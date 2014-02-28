@@ -1,0 +1,9 @@
+/* CSS for AudioXBlock */
+
+.audio_block .count {
+    font-weight: bold;
+}
+
+.audio_block p {
+    cursor: pointer;
+}
