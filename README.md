@@ -6,4 +6,4 @@ element. If unavailable, it will fall back to an embed element.
 
 Usage: 
 
-    \<audio src="http://server.tld/static/song.mp3" /\>
+    <audio src="http://server.tld/static/song.mp3" />
