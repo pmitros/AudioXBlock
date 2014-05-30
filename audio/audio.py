@@ -31,13 +31,10 @@ class AudioXBlock(XBlock):
         when viewing courses.
         """
         html = self.resource_string("static/html/audio.html")
-        print self.src
-        print html.format
         frag = Fragment(html.format(src = self.src))
         frag.add_css(self.resource_string("static/css/audio.css"))
         frag.add_javascript(self.resource_string("static/js/src/audio.js"))
         frag.initialize_js('AudioXBlock')
-        print self.xml_text_content()
         return frag
 
     # TO-DO: change this to create the scenarios you'd like to see in the
