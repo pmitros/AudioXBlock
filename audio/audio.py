@@ -1,4 +1,4 @@
-"""TO-DO: Write a description of what this XBlock is."""
+"""TO-DO: This XBlock will play an MP3 file as an HTML5 audio element. """
 
 import pkg_resources
 
@@ -33,8 +33,6 @@ class AudioXBlock(XBlock):
         html = self.resource_string("static/html/audio.html")
         frag = Fragment(html.format(src = self.src))
         frag.add_css(self.resource_string("static/css/audio.css"))
-        frag.add_javascript(self.resource_string("static/js/src/audio.js"))
-        frag.initialize_js('AudioXBlock')
         return frag
 
     # TO-DO: change this to create the scenarios you'd like to see in the
