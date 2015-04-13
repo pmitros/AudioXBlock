@@ -35,6 +35,28 @@ class AudioXBlock(XBlock):
         frag.add_css(self.resource_string("static/css/audio.css"))
         return frag
 
+    def studio_view(self, context):
+        """
+        The view for editing the AudioXBlock parameters inside Studio.
+        """
+        html = self.resource_string("static/html/audio_edit.html")
+        frag = Fragment(html.format(src=self.src))
+
+        js = self.resource_string("static/js/src/audio_edit.js")
+        frag.add_javascript(js)
+        frag.initialize_js('AudioEditBlock')
+
+        return frag
+
+    @XBlock.json_handler
+    def studio_submit(self, data, suffix=''):
+        """
+        Called when submitting the form in Studio.
+        """
+        self.src = data.get('src')
+
+        return {'result': 'success'}
+
     # TO-DO: change this to create the scenarios you'd like to see in the
     # workbench while developing your XBlock.
     @staticmethod
